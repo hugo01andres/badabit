@@ -1,0 +1,545 @@
+/*
+    1. Posicionamiento
+    2. Modelo de caja (Box-Model)
+    3. Tipografia (Fuentes, tamaños de fuentes)
+    4. Visuales (shadow-box, border-radius)
+    5.Otros
+*/
+:root{
+    /*Colores*/
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #FFE9D4;
+    --secondary-blue: #1A9AF7;
+    --soft-blue: #E7F5FF;
+    --warm-black: #201E1C;
+    --black: #282623;
+    --grey: #BABABA;
+    --off-white:#FAF8F7;
+    --just-white:#FFF;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+}
+/*HEADER*/
+header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+    
+
+} /*Configuramos la imagen*/
+header .image--title{
+    width: 150px; /*Le damos el ancho correspondiente a la imagen*/
+    height: 24px;
+    margin-top: 60px; 
+    align-self: center; /*Que se alinie todo al centro*/
+}/*Le damos tamaño al contenedor*/
+.header--title-container{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 40px;
+    text-align: center;/*Alineamos el texto*/
+    align-self: center;/*Hacemos que cada vez que se mueva se centre en auto*/
+}
+/*Titulo del header*/
+.header--title-container h1{
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem; /*Espacio entre lineas*/
+    color: var(--just-white);
+}
+/*Parrafo del header*/
+.header--title-container p{
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--soft-orange);
+    
+}
+/*Boton del header*/
+.header--title-container .header--button{
+    position: absolute; /*El absolute significa que estara static el button*/
+    left: calc(50% - 118px); /*Hacemos calculos para centrar el button*/
+    top: 270px;/*Posicionamient absolute*/
+    display: block; /*Bloqueamos cualquier posicionamiento flex*/
+    margin-top: 35px; /*Pero aun asi usamos display para darle margen y acomodarlo en el contenedor*/
+    padding: 15px; /*Padding al texto*/
+    width: 229px;/*Tmaño del button*/
+    height: 48px;
+    background-color: var(--off-white);
+    /*Sombra*/
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16); /*Le hacemos sombra con gradient*/
+    border-radius: 8px; 
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none; 
+    color: var(--black);
+}
+/*Ponemos el logo*/
+.header--button span{
+    display: inline-block; /*Manipular el inside del contenedor*/
+    width: 14px; /*Le damos cuanto a la derecha queremos que se posicione*/
+    height: 8px; /*Le damos la altura a donde ponerse*/
+    margin-left: 10px; /*Le damos margen para que se separe del texto*/
+    background-image: url("https://i.ibb.co/SKfRCgr/down-arrow.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/*Contenedor del main   ///      tendra el 100% del ancho y una altura que cada contenedor la determinara*/
+main{
+    width: 100%;
+    height: auto;
+    background-color: var(--off-white);
+}
+/*Contenedor donde estara la imagen, le damos medidas*/
+main .main-exchange-container{
+    width: 100%; /*Ancho 100%*/
+    height: auto; /*Altura la que ocupe mi imagen*/
+    padding-top: 80px; /*La distancia que quiero que tenga para abajo 80px*/
+    padding-bottom: 30px; /*La distancia que quiero que este alejado de abajo*/
+    text-align: center; /*Que todos los textos en el contenedor exchange esten en el centro*/
+}
+/*Ordenamos el titulo y hacemos que tanto se extenga*/
+main .main-exchange-container--title{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+/*Editamos todo lo que tiene que ver con la imagen
+Le damos medidas, altura, el margen 0 auto es muy importante*/
+.main-exchange-container .backgroundImg{
+    width: 200px; /*Le damos un ancho al contenedor de la imagen*/
+    height: 200px;
+    margin: 0 auto; /*Que siempre se posicione en el centro*/
+    margin-bottom: 50px; /*Que este alejado del texto*/
+    background-image: url("https://i.ibb.co/VLc350F/Bitcoin.png");
+    background-size: cover; /*Que cubra todo*/
+    background-position: center; /*Sin importar el tamaño, siempre este en el centro*/
+    background-repeat: no-repeat; /*Que no se estire la imagen*/
+}/*Contenedor del h2 editando color, fuente, etc*/
+.main-exchange-container h2{
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+/*Contenedor del p editando color, fuente, etc*/
+.main-exchange-container p{
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    color:#757575;
+}
+/*Contenedor actual*/
+ .main-currency-table, .main-second-table{
+     width: 70%;
+     min-width: 235px;
+     max-width: 500px;
+     height: 360px;
+     margin: 0 auto;
+     font-family: "Inter", sans-serif;
+ }/*Titulo "Moneda"*/
+ .main-currency-table .currency-table--title, .main-second-table .second-table--title{
+     margin-bottom: 15px;
+     font-size: 1.8rem;
+     font-weight: bold;
+     line-height: 2.3rem;
+     color: var(--bitcoin-orange);
+ }
+ #second-table-color--title{
+     color: var(--secondary-blue);
+ }
+ /*Contenido de la tabla y usamos la herencia, con las comas asignamos:
+ las instrucciones a 2 clases diferentes*/
+ .currency-table--container , .main-second-table .second-table--container{
+     width: 90%;
+     min-width: 230px;
+     max-width: 300px;
+     height: 250px; /**/
+     margin: 0 auto; /*Se posicionara siempre en el centro*/
+ }/*Utilizamos la herencia, y le damos los mismos declaraciones a 2 clases diferentes*/
+ .currency-table--container table, .second-table--container table{
+     width: 100%; /*Pueda usar el 100% del contenedor padre (que en dado caso es .main-currency-table)*/
+     height: 100%;
+ }/*Contenido del td*/
+ .currency-table--container td, .second-table--container td{
+     width: 50%; /*Que tenga un ancho de 50%, no tiene relevancia porque ya lo habiamos ajustado arriba*/
+     font-size: 1.6rem;
+     font-weight: 500px;
+     line-height: 1.9rem;
+     color: var(--grey);
+     background-color: var(--just-white);
+ }
+ /*Usamos esta clase en las 2 tablas HERENCIAAAAAA*/
+ .currency-table--container .table__top-left, .second-table--container .table__top-left{
+     border-radius: 15px 0 0 0; /*un borde circular parte superior izquierda*/
+ }
+.currency-table--container .table__top-right, .second-table--container .table__top-right{
+     border-radius: 0 15px 0 0;/*un borde circular parte superior derecha*/
+ }
+ .currency-table--container .table__bottom-left, .second-table--container .table__bottom-left{
+     border-radius: 0 0 0 15px;/*un borde circular parte inferior izquierda*/
+ }
+ .currency-table--container .table__bottom-right, .second-table--container .table__bottom-right{
+    border-radius: 0 0 15px 0; /*un borde circular parte inferior derecha*/
+}
+/*Diseño a la columna derecha*/
+.currency-table--container .table__right{
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+}
+/*Diseño al trending line para abajo*/
+.currency-table--container .down{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url("https://i.ibb.co/qsc9R2G/trending-down.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/*Diseño al trending line para abajo*/
+.currency-table--container .up{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url("https://i.ibb.co/9Wt1n2C/trending-up.png");
+    background-size: cover;
+    background-position: center;
+    background-position: no-repeat;
+}
+.main-currency-table .currency-table--date, .main-second-table .second-table--time{
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+     background-color: var(--soft-orange);
+     border-radius: 8px;
+ }
+ #second-table--time__color{
+     background-color: var(--soft-blue);
+ }
+ .currency-table--date p , .second-table--time p{
+     font-size: 1.2rem;
+     font-weight: 300;
+     line-height: 1.5rem;
+     color: var(--warm-black);
+ }
+ .main-product-detail{
+     position: relative;
+     width: 100%;
+     min-width: 320px;
+     height: auto;
+     padding: 20px 10px;
+     background-color: var(--warm-black);
+ }
+ .product-detail--batata-logo{
+     position: absolute;
+     width: 40px;
+     height: 25px;
+     top: -10px;
+     left: calc(50% - 20px);
+     background-image: url("https://i.ibb.co/4tL16BQ/batata.png");
+ }
+ .product-detail--title{
+     width: 90%;
+     min-width: 288px;
+     height: auto;
+     margin: 0 auto;
+     margin-top: 50px;
+     text-align: center;
+ }
+ .product-detail--title h2{
+     font-size: 2.4rem;
+     font-weight: bold;
+     line-height: 2.6rem;
+     color: var(--just-white);
+ }
+ .product-detail--title p{
+     margin-top: 20px;
+     margin-bottom: 20px;
+     font-size: 1.4rem;
+     font-weight: 500;
+     line-height: 1.8rem;
+     color: rgba(128, 128, 128, 1);
+     font-family: 'DM Sans', sans-serif;
+ }
+ .product-detail--card{
+     width: 90%;
+     min-width: 288px;
+     max-width: 400px;
+     height: 150px;
+     margin: 15px auto;
+     padding: 15px;
+     background-color: var(--black) ;
+     border-radius: 5px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+ }/*Esta hace que podamos hacer herencia y poder utilizar esta clase para todos los span*/
+.product-detail--card span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+ .clock{
+     background-image: url("https://i.ibb.co/GkQhkP0/clock.png");  
+ }
+ .eye{
+     background-image: url("https://i.ibb.co/jvJymvS/eye.png");
+ }
+ .dollar{
+     background-image: url("https://i.ibb.co/bRxGPwX/dollar-sign.png");
+ }
+ .check{
+     background-image: url("https://i.ibb.co/z7pL9B0/check-circle.png");
+ }
+ .product--card-title{
+     margin-bottom: 15px;
+     font-size: 1.8rem;
+     font-weight: bold;
+     line-height: 1.8rem;
+     color: var(--just-white);
+ }
+ .product--card-body{
+     font-size: 1.4rem;
+     font-weight: 500;
+     line-height: 1.8rem;
+     color: #808080;
+ }
+ .bitcoin-img--container{
+     width: 100%;
+     min-width: 320px;
+     height: 50vh;
+     background-image: url("https://i.ibb.co/H7PhtNZ/bitcoinbaby2x.jpg");
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     text-align: center;
+     
+ }
+ .bitcoin-img--container h2{
+     padding-top: 60px;
+     font-size: 2.4rem;
+     font-weight: bold;
+     line-height: 2.6rem;
+     color: var(--just-white);
+ }
+.main-plans-container{
+    width: 100%;
+    min-width: 320px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+.main-plans-container .plans--title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0  auto;
+    margin-bottom: 50px;
+}
+
+
+.plans--title h2{
+    padding-top: 50px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+.plans--title p{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+.plans-container--slider{
+    display: flex;
+    height: 316px;
+    overflow: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    }
+     /* .plans-container--slider::-webkit-scrollbar {
+        background-color: var(--soft-orange);
+        height: 4px;
+     }
+    .plans-container--slider::-webkit-scrollbar-thumb {
+        background-color: var(--bitcoin-orange);
+    }
+    @media (min-width: 750px) {
+        .plans__container--slider::-webkit-scrollbar {
+          display: none;
+        }
+      }  */
+      
+.plans-container--card{
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 50px 20px 0;
+    padding: 0 15px;
+    /* background-color: var(--just-white);  */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+}
+/*Esto lo cambiaremos despues, cuando hagamos otra version en git*/
+ .plans-container-basic{
+    background-color: var(--just-white);
+}
+.plans-container-recommended{
+    background-color: var(--just-white);
+}
+.plans-container-limited{
+    background-color: var(--warm-black);
+}
+
+.plans-container--card .price-type{
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    top: -15px;
+    font-size: 1.5rem;
+    left: calc(50% - 60px);
+    border-radius: 8px;
+    
+    padding-top: 6px;
+}
+.basic{
+    color: var(--just-white);
+background-color: #1A9AF7;
+}
+.recommended{
+    color: var(--just-white);
+    background-color: var(--bitcoin-orange);
+}
+.limited{
+    font-weight: bold;
+    border: rgb(153, 51, 65) solid 2px;
+    background-color: #757575;
+}
+.plans-container--card .plan-card--title{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    
+}
+/*Luego haremos otra version con git*/
+.title-basic{
+    color: black;
+}
+.title-recommended{
+    color: black;
+}
+.title-limited{
+   color: var(--just-white); 
+}
+
+.plan-card--price{
+    padding: 5px 0;
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 5.3rem;
+}
+.price-basic{
+    color: black;
+}
+.price-recommended{
+    color: black;
+}
+.price-limited{
+   color: var(--just-white); 
+}
+.plan-card--price span{
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+.plan-card--saving{
+    font-size: 1.2rem;
+    color: #757575;
+}
+.plan-card--ca{
+    width: 150px;
+    height: 48px;
+    margin-top: 20px;
+    background-color: #faf8f7;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.8rem;
+    color: var(--black);
+    text-align: center;
+}
+.plan-card--ca span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    background-image: url("https://i.ibb.co/YjjM6Dp/orange-right-arrow.png");
+    vertical-align: text-bottom; /*Poder acomodar el icono junto con el texto*/  
+}
+footer{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+
+footer section{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+footer .left ul{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+.left li{
+    margin: 10px 0;
+}
+.left a{
+    text-decoration: none;
+    color: var(--just-white)
+
+}
+footer a:hover{
+    text-decoration: underline;
+}
